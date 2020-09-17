@@ -6,9 +6,8 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Calculator calculator = new Calculator();
-        boolean isRunning = true;
 
-        while (isRunning) {
+        while (true) {
             String input = scanner.nextLine();
 
             try {
@@ -25,7 +24,8 @@ public class Main {
                 System.out.println(output);
             } catch (Exception e) {
                 System.out.println(e.getMessage());
-                isRunning = false;
+
+                break;
             }
         }
     }
