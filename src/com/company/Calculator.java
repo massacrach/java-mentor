@@ -1,7 +1,7 @@
 package com.company;
 
 public class Calculator {
-    public int execute(int leftNumber, int rightNumber, Sign sign) {
+    public static int execute(int leftNumber, int rightNumber, Sign sign) {
         int result = 0;
 
         switch (sign) {
