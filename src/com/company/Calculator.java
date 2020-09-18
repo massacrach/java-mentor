@@ -2,7 +2,7 @@ package com.company;
 
 public class Calculator {
     public static int execute(int leftNumber, int rightNumber, Sign sign) {
-        int result = 0;
+        Integer result = null;
 
         switch (sign) {
             case ADD:

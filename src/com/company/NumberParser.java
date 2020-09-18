@@ -16,13 +16,13 @@ public class NumberParser {
                 throw new Exception("Invalid range");
         } catch (NumberFormatException numberFormatException) {
             // CHECK IF INPUT IS A LATIN DIGIT
-            Integer latinNumber = LatinNumber.parse(trimmedText);
+            Integer romanNumber = RomanNumber.toArabicDigit(trimmedText);
 
-            if (latinNumber != null) {
+            if (romanNumber != null) {
                 type = NumberType.LATIN;
-                value = latinNumber;
+                value = romanNumber;
             } else {
-                // INPUT IS NEITHER AN INTEGER NOR A VALID LATIN DIGIT
+                // INPUT IS NEITHER AN INTEGER NOR A VALID ROMAN DIGIT
                 throw new Exception("Unknown symbol");
             }
         }

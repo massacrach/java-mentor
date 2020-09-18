@@ -4,6 +4,7 @@ public class Expression {
     Sign sign;
     int leftNumber;
     int rightNumber;
+    NumberType type;
 
     Expression(String text) throws Exception {
         for (Sign sign : Sign.values()) {
@@ -19,6 +20,12 @@ public class Expression {
                 if (!validateTypes(leftNumberParser.type, rightNumberParser.type))
                     throw new Exception("Different number types");
 
+                /*
+                    BOTH NUMBERS ARE OF THE SAME TYPE SO WE CAN ASSIGN
+                    THE "TYPE" ATTRIBUTE TO ANY OF THEM
+                 */
+                type = leftNumberParser.type;
+
                 leftNumber = leftNumberParser.value;
                 rightNumber = rightNumberParser.value;
 
@@ -32,5 +39,12 @@ public class Expression {
 
     public boolean validateTypes(NumberType type1, NumberType type2) {
         return type1 == type2;
+    }
+
+    public String convertResult(Integer number) {
+        if (type == NumberType.ARABIC)
+            return number.toString();
+
+        return RomanNumber.toRomanDigit(number);
     }
 }
