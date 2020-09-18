@@ -15,11 +15,11 @@ public class NumberParser {
             if (value <= 0 || value > 10)
                 throw new Exception("Invalid range");
         } catch (NumberFormatException numberFormatException) {
-            // CHECK IF INPUT IS A LATIN DIGIT
+            // CHECK IF INPUT IS A ROMAN DIGIT
             Integer romanNumber = RomanNumber.toArabicDigit(trimmedText);
 
             if (romanNumber != null) {
-                type = NumberType.LATIN;
+                type = NumberType.ROMAN;
                 value = romanNumber;
             } else {
                 // INPUT IS NEITHER AN INTEGER NOR A VALID ROMAN DIGIT
